@@ -16,17 +16,7 @@ export default function App() {
     <DataProvider>
       <NavigationContainer>
         <Tab.Navigator
-          screenOptions={(route) => ({
-            tabBarIcon: ({ focused, color, size }) => {
-              let iconName;
-              if (route.name === 'Transactions') {
-                iconName = focused ? 'ios-document' : 'ios-document-outline';
-              } else if (route.name === 'Summary') {
-                iconName = focused ? 'ios-information-circle' : 'ios-information-circle-outline';
-              }
-              console.log(route.name);
-              return <Icon name={iconName} size={size} color={color} />;
-            },
+          screenOptions={{
             headerStyle: {
               backgroundColor: '#4F8BBA',
             },
@@ -36,7 +26,7 @@ export default function App() {
             },
             tabBarActiveTintColor: 'blue',
             tabBarInactiveTintColor: 'gray',
-          })}
+          }}
         >
           <Tab.Screen 
           name="Transactions" 
